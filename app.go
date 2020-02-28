@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"flag"
 	"fmt"
 	"log"
@@ -24,12 +23,12 @@ func main() {
 
 	addrL, err := net.ResolveUDPAddr("udp", port)
 	if err != nil {
-		log.Fatalf("Invalid UDP address: %v", port)
+		log.Fatalf("Invalid UDP address: %s", port)
 	}
 
 	listener, err := net.ListenUDP("udp", addrL)
 	if err != nil {
-		log.Fatal("Error listening on %v: %v", port, err)
+		log.Fatalf("Error listening on %s: %v", port, err)
 	}
 
 	for {
@@ -56,7 +55,7 @@ func main() {
 }
 
 func whoAmIInfo() string {
-	var out bytes.Buffer
+	var out strings.Builder
 
 	if len(name) > 0 {
 		out.WriteString(fmt.Sprintf("Name: %s\n", name))
