@@ -1,3 +1,3 @@
-module github.com/containous/whoamiudp
+module github.com/traefik/whoamiudp
 
 go 1.13
