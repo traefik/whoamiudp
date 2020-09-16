@@ -1,6 +1,6 @@
 language: go
 
-go_import_path: github.com/containous/whoamiudp
+go_import_path: github.com/traefik/whoamiudp
 
 notifications:
   email:

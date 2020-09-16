@@ -2,7 +2,7 @@
 
 SRCS = $(shell git ls-files '*.go' | grep -v '^vendor/')
 
-IMAGE_NAME := containous/whoamiudp
+IMAGE_NAME := traefik/whoamiudp
 
 default: clean check test build
 
