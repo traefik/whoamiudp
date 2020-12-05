@@ -8,7 +8,7 @@ WORKDIR /go/whoamiudp
 
 # Download go modules
 COPY go.mod .
-COPY go.sum .
+#COPY go.sum .
 RUN GO111MODULE=on GOPROXY=https://proxy.golang.org go mod download
 
 COPY . .
