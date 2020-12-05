@@ -9,8 +9,10 @@ import (
 	"strings"
 )
 
-var port string
-var name string
+var (
+	port string
+	name string
+)
 
 func init() {
 	flag.StringVar(&port, "port", ":8080", "give me a port number")
