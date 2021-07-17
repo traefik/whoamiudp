@@ -23,12 +23,14 @@
 [linters]
   enable-all = true
   disable = [
-    "maligned",
+    "golint", # deprecated
+    "scopelint", # deprecated
+    "interfacer", # deprecated
+    "maligned", # deprecated
     "lll",
     "gas",
     "dupl",
     "prealloc",
-    "scopelint",
     "gochecknoglobals",
     "gochecknoinits",
     "gomnd",
@@ -41,6 +43,7 @@
     "wrapcheck",
     "exhaustive",
     "exhaustivestruct",
+    "forbidigo",
   ]
 
 [issues]
