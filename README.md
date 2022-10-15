@@ -1,7 +1,7 @@
 # WhoamiUDP
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/traefik/whoamiudp.svg)](https://hub.docker.com/r/traefik/whoamiudp/)
 [![Build Status](https://github.com/traefik/whoamiudp/workflows/Main/badge.svg?branch=master)](https://github.com/traefik/whoamiudp/actions)
-[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/traefik/whoamiudp.svg)](https://hub.docker.com/r/traefik/whoamiudp)
 
 | Flag   | Default | Description |
 |--------|---------|-------------|
