@@ -76,6 +76,9 @@ dockers:
       - 'traefik/whoamiudp:latest-amd64'
       - 'traefik/whoamiudp:{{ .Tag }}-amd64'
       - 'traefik/whoamiudp:v{{ .Major }}.{{ .Minor }}-amd64'
+      - 'ghcr.io/traefik/whoamiudp:latest-amd64'
+      - 'ghcr.io/traefik/whoamiudp:{{ .Tag }}-amd64'
+      - 'ghcr.io/traefik/whoamiudp:v{{ .Major }}.{{ .Minor }}-amd64'
     build_flag_templates:
       - '--pull'
       # https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
@@ -97,6 +100,9 @@ dockers:
       - 'traefik/whoamiudp:latest-arm64'
       - 'traefik/whoamiudp:{{ .Tag }}-arm64'
       - 'traefik/whoamiudp:v{{ .Major }}.{{ .Minor }}-arm64'
+      - 'ghcr.io/traefik/whoamiudp:latest-arm64'
+      - 'ghcr.io/traefik/whoamiudp:{{ .Tag }}-arm64'
+      - 'ghcr.io/traefik/whoamiudp:v{{ .Major }}.{{ .Minor }}-arm64'
     build_flag_templates:
       - '--pull'
       # https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
@@ -119,6 +125,9 @@ dockers:
       - 'traefik/whoamiudp:latest-armv7'
       - 'traefik/whoamiudp:{{ .Tag }}-armv7'
       - 'traefik/whoamiudp:v{{ .Major }}.{{ .Minor }}-armv7'
+      - 'ghcr.io/traefik/whoamiudp:latest-armv7'
+      - 'ghcr.io/traefik/whoamiudp:{{ .Tag }}-armv7'
+      - 'ghcr.io/traefik/whoamiudp:v{{ .Major }}.{{ .Minor }}-armv7'
     build_flag_templates:
       - '--pull'
       # https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
