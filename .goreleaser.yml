@@ -51,6 +51,22 @@ docker_manifests:
       - 'traefik/whoamiudp:v{{ .Major }}.{{ .Minor }}-arm64'
       - 'traefik/whoamiudp:v{{ .Major }}.{{ .Minor }}-armv7'
 
+  - name_template: 'ghcr.io/traefik/whoamiudp:{{ .Tag }}'
+    image_templates:
+      - 'ghcr.io/traefik/whoamiudp:{{ .Tag }}-amd64'
+      - 'ghcr.io/traefik/whoamiudp:{{ .Tag }}-arm64'
+      - 'ghcr.io/traefik/whoamiudp:{{ .Tag }}-armv7'
+  - name_template: 'traefik/whoamiudp:latest'
+    image_templates:
+      - 'ghcr.io/traefik/whoamiudp:{{ .Tag }}-amd64'
+      - 'ghcr.io/traefik/whoamiudp:{{ .Tag }}-arm64'
+      - 'ghcr.io/traefik/whoamiudp:{{ .Tag }}-armv7'
+  - name_template: 'traefik/whoamiudp:v{{ .Major }}.{{ .Minor }}'
+    image_templates:
+      - 'ghcr.io/traefik/whoamiudp:v{{ .Major }}.{{ .Minor }}-amd64'
+      - 'ghcr.io/traefik/whoamiudp:v{{ .Major }}.{{ .Minor }}-arm64'
+      - 'ghcr.io/traefik/whoamiudp:v{{ .Major }}.{{ .Minor }}-armv7'
+
 dockers:
   - use: buildx
     goos: linux
