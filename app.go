@@ -1,3 +1,4 @@
+// Package main provides a simple UDP server that responds to WHO queries with system information.
 package main
 
 import (
@@ -9,19 +10,17 @@ import (
 	"strings"
 )
 
-var (
-	port string
-	name string
-)
+func main() {
+	var (
+		port string
+		name string
+	)
 
-func init() {
 	flag.StringVar(&port, "port", ":8080", "give me a port number")
 	flag.StringVar(&name, "name", "", "name")
-}
-
-func main() {
 	flag.Parse()
-	fmt.Printf("Starting up on port %s", port)
+
+	log.Printf("Starting up on port %s", port)
 
 	addrL, err := net.ResolveUDPAddr("udp", port)
 	if err != nil {
@@ -43,12 +42,13 @@ func main() {
 
 		temp := strings.TrimSpace(string(buffer[:n]))
 		if temp == "WHO" {
-			_, err := listener.WriteTo([]byte(whoAmIInfo()), addrD)
+			_, err := listener.WriteTo([]byte(whoAmIInfo(name)), addrD)
 			if err != nil {
 				log.Println(err)
 			}
 		} else {
-			_, err := listener.WriteTo([]byte(fmt.Sprintf("Received: %s", buffer[:n])), addrD)
+			response := fmt.Appendf(nil, "Received: %s", buffer[:n])
+			_, err := listener.WriteTo(response, addrD)
 			if err != nil {
 				log.Println(err)
 			}
@@ -56,10 +56,10 @@ func main() {
 	}
 }
 
-func whoAmIInfo() string {
+func whoAmIInfo(name string) string {
 	var out strings.Builder
 
-	if len(name) > 0 {
+	if name != "" {
 		out.WriteString(fmt.Sprintf("Name: %s\n", name))
 	}
 
